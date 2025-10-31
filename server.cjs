@@ -1,15 +1,13 @@
-const express=require("express");
+const express = require("express");
 const cors=require("cors");
 const path=require("path");
-const dotenv =require("dotenv");
-const { fileURLToPath }=require("url");
-const { dirname, join }=require("path");
+
+
 
 require("dotenv").config();
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 const app = express();
 app.use(cors());
 
