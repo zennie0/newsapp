@@ -9,7 +9,13 @@ require("dotenv").config();
 
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://newsweb-n34b.onrender.com", // your frontend domain
+    methods: ["GET"],
+    credentials: true,
+  })
+);
 app.use(express.static(path.join(__dirname, "frontend/dist")));
 
 app.use("/api/news", async(req,res)=>{
