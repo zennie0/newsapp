@@ -1,8 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 // const fetch = require("node-fetch");
-import path from "path";
-import { fileURLToPath } from "url";
+
+const { fileURLToPath }= require("url");
 
 
 require("dotenv").config();
