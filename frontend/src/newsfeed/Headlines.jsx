@@ -4,8 +4,11 @@ import "./navbar.css";
 function Headlines() {
 const [headlines, setHeadlines]= useState([]);
 
- const url = import.meta.env.VITE_API_URL || "http://localhost:5000"
-
+//  const url = import.meta.env.VITE_API_URL || "http://localhost:5000"
+const url =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:5000"
+    : "https://your-backend-name.onrender.com";
 
 let getHeadline = async()=>{
    try{
