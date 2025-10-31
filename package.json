@@ -2,10 +2,10 @@
   "name": "news",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.cjs",
+    "start": "node server.js",
     "build": "cd frontend && npm install && npm run build"
   },
   "keywords": [],
