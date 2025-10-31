@@ -18,10 +18,16 @@ app.use(
 );
 app.use(express.static(path.join(__dirname, "frontend/dist")));
 
+
+
+
+
+
+
 app.use("/api/news", async(req,res)=>{
     try{
  const query = req.query.q || "latest";
-    const response = await fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.API_KEY}`);
+    const response = await fetch(`https://gnews.io/api/v4/search?q=${query}&lang=en&max=10&apikey=${process.env.API_KEY}`);
     const data = await response.json();
     res.json(data);
     }catch(error){
