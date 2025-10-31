@@ -1,8 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 // const fetch = require("node-fetch");
+import path from "path";
+import { fileURLToPath } from "url";
+
+
 require("dotenv").config();
 
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 app.use(cors());
 
@@ -19,5 +26,10 @@ app.use("/api/news", async(req,res)=>{
     }
    
 })
+
+app.use(express.static(path.join(__dirname, "client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 
 app.listen(5000,()=> console.log("Server running on port 5000"));
